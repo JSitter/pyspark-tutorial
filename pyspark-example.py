@@ -63,7 +63,7 @@ regressionDataRDD = regressionDataFrame.rdd.map(list)
 # print(regressionDataFrame.crosstab('TV', 'radio').show())
 regressionDataLabelPoint = regressionDataRDD.map(lambda data: LabeledPoint(data[3], data[0:3]))
 
-from pyspark.mllib.regression import inearRegressionWithSGD as lrSGD
+from pyspark.mllib.regression import LinearRegressionWithSGD as lrSGD
 
 print(regressionDataRDD.take(5))
 regressionLabelPointSplit = regressionDataLabelPoint.randomSplit([0.7, 0.3])
